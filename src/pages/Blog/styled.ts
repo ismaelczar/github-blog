@@ -5,5 +5,5 @@ export const BlogContainer = styled.section`
   flex-direction: column;
   gap: 4.5rem;
   width: 864px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 `

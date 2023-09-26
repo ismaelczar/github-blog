@@ -4,18 +4,26 @@ export const ProfileContainer = styled.section`
   display: flex;
   gap: 2rem;
 
-  max-width: 864px;
+  min-width: 864px;
   padding: 2rem 2.5rem;
   margin: -80px auto 0;
 
   border-radius: 10px;
   background: ${(props) => props.theme['base-profile']};
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
+
+  img {
+    height: 148px;
+    width: 148px;
+    border-radius: 8px;
+  }
 `
 export const SummaryProfile = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  width: 100%;
 `
 
 export const Header = styled.div`
@@ -36,6 +44,12 @@ export const Header = styled.div`
     font-weight: 700;
     color: ${(props) => props.theme.blue};
     text-decoration: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid ${(props) => props.theme.blue};
+    }
   }
 `
 
