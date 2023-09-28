@@ -1,5 +1,5 @@
 import { Header } from '../../components/Header'
-import { Posts } from '../../components/Posts/intext'
+import { Posts } from '../../components/Post/indext'
 import { Profile } from '../../components/Profile'
 import { SearchForm } from '../../components/SearchForm/intex'
 import { BlogContainer } from './styled'

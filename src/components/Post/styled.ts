@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
 
 export const GridPosts = styled.section`
@@ -7,9 +8,11 @@ export const GridPosts = styled.section`
   gap: 2rem;
 `
 
-export const PostsCard = styled.div`
+export const PostsCard = styled(NavLink)`
   padding: 1rem;
   line-height: 160%;
+  text-decoration: none;
+  cursor: pointer;
 
   color: ${(props) => props.theme['base-text']};
   background: ${(props) => props.theme['base-post']};
@@ -21,8 +24,11 @@ export const PostsCard = styled.div`
 
   max-height: 250px;
   overflow: hidden;
-
   border: 1px solid transparent;
+
+  time {
+    font-size: 0.875rem;
+  }
 
   &:hover {
     border: 1px solid ${(props) => props.theme['base-label']};
@@ -33,6 +39,7 @@ export const PostsCard = styled.div`
 export const PostsCardHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 0 0 1.25rem;
 
   strong {
     flex-wrap: wrap;

@@ -30,8 +30,6 @@ export function IssuesProvider({ children }: IssueProviderProps) {
     fetchIssues()
   }, [])
 
-  console.log(issues)
-
   return (
     <IssuesContext.Provider value={{ issues }}>
       {children}
