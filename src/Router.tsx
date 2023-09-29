@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 
 import { Blog } from './pages/Blog'
-import { Issue } from './pages/Issue/[id]'
+import { Issue } from './pages/Issue'
 
 export function Router() {
   return (

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { device } from '../../styles/mediaQuerys'
 
 export const ProfileContainer = styled.section`
   display: flex;
   gap: 2rem;
 
-  min-width: 864px;
+  width: auto;
   padding: 2rem 2.5rem;
   margin: -80px auto 0;
 
@@ -16,6 +17,12 @@ export const ProfileContainer = styled.section`
     height: 148px;
     width: 148px;
     border-radius: 8px;
+  }
+
+  @media ${device.mobile} {
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
   }
 `
 export const SummaryProfile = styled.div`
@@ -62,11 +69,14 @@ export const Tags = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+  color: ${(props) => props.theme['base-subtitle']};
 
-    color: ${(props) => props.theme['base-subtitle']};
+  svg {
+    color: ${(props) => props.theme['base-label']};
+  }
 
-    svg {
-      color: ${(props) => props.theme['base-label']};
-    }
+  @media ${device.mobile} {
+    font-size: 0.6rem;
   }
 `

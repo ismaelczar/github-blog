@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { device } from '../../styles/mediaQuerys'
 
 export const SearchFormContainer = styled.form`
   display: flex;
@@ -7,7 +8,8 @@ export const SearchFormContainer = styled.form`
   justify-content: space-between;
   gap: 1rem;
 
-  width: 100%;
+  padding: 1rem;
+  width: auto;
 
   input {
     width: 100%;
@@ -23,9 +25,9 @@ export const SearchFormContainer = styled.form`
   }
 `
 export const SearchFormHeader = styled.div`
-  width: 100%;
   max-width: 1440px;
   display: flex;
+  width: 100%;
 
   justify-content: space-between;
 `

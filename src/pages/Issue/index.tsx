@@ -1,5 +1,5 @@
 import { GithubLogo, MapPin, Users } from 'phosphor-react'
-import { Header } from '../../../components/Header'
+import { Header } from '../../components/Header'
 import {
   IssueBody,
   IssueComponent,
@@ -7,12 +7,15 @@ import {
   IssueLink,
   Tags,
 } from './styled'
-import { IssuesContext } from '../../../contexts/IssuesContext'
+import { IssuesContext } from '../../contexts/IssuesContext'
 import { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 export function Issue() {
   const { issues } = useContext(IssuesContext)
+
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -21,6 +24,14 @@ export function Issue() {
   }
 
   const idNumber = parseInt(id, 10)
+  const index = issues[idNumber]
+
+  function distanceToNow(argument: string) {
+    return formatDistanceToNow(new Date(argument), {
+      locale: ptBR,
+      addSuffix: true,
+    })
+  }
 
   return (
     <>
@@ -31,23 +42,23 @@ export function Issue() {
             <button onClick={() => navigate('/')}>VOLTAR</button>
             <a href="">VER NO GITHUB</a>
           </IssueLink>
-          <strong>{issues[idNumber].title}</strong>
+          <strong>{index.title}</strong>
           <Tags>
             <span>
               <GithubLogo size={18} weight="bold" />
-              <p></p>
+              <p>{index.user.login}</p>
             </span>
             <span>
               <MapPin size={18} weight="bold" />
-              <p>{issues[idNumber].created_at}</p>
+              <p>{distanceToNow(index.created_at)}</p>
             </span>
             <span>
               <Users size={18} weight="bold" />
-              <p> comentários</p>
+              <p>{index.comments} comentários</p>
             </span>
           </Tags>
         </IssueHeader>
-        <IssueBody>{issues[idNumber].body}</IssueBody>
+        <IssueBody>{index.body}</IssueBody>
       </IssueComponent>
     </>
   )

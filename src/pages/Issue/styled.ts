@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../styles/mediaQuerys'
 
 export const IssueComponent = styled.main`
   display: flex;
@@ -11,13 +12,20 @@ export const IssueHeader = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 
-  min-width: 864px;
+  width: auto;
+  max-width: 864px;
   padding: 2rem 2.5rem;
   margin: -80px auto 0;
 
   border-radius: 10px;
   background: ${(props) => props.theme['base-profile']};
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
+
+  @media ${device.mobile} {
+    width: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
 `
 
 export const IssueLink = styled.div`
@@ -39,6 +47,10 @@ export const IssueLink = styled.div`
 
     &:hover {
       border-bottom: 1px solid ${(props) => props.theme.blue};
+    }
+
+    @media ${device.mobile} {
+      font-size: 0.75rem;
     }
   }
 
@@ -79,6 +91,10 @@ export const Tags = styled.div`
   svg {
     color: ${(props) => props.theme['base-label']};
   }
+
+  @media ${device.mobile} {
+    font-size: 0.6rem;
+  }
 `
 export const IssueBody = styled.div`
   max-width: 864px;
@@ -87,4 +103,8 @@ export const IssueBody = styled.div`
   padding: 3rem;
   letter-spacing: 0;
   text-align: justify;
+
+  @media ${device.mobile} {
+    padding: 1rem;
+  }
 `

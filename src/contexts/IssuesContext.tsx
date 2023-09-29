@@ -1,11 +1,17 @@
 import { createContext, useEffect, useState } from 'react'
 import { apiIssues } from '../lib/axios'
 
+interface user {
+  login: string
+}
+
 interface IssuesProps {
   id: number
   title: string
   body: string
   created_at: string
+  user: user
+  comments: number
 }
 
 interface IssuesContextProps {

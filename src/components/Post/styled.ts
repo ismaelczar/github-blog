@@ -1,11 +1,19 @@
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
+import { device } from '../../styles/mediaQuerys'
 
 export const GridPosts = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: row;
   gap: 2rem;
+
+  @media ${device.mobile} {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
 `
 
 export const PostsCard = styled(NavLink)`
@@ -33,6 +41,10 @@ export const PostsCard = styled(NavLink)`
   &:hover {
     border: 1px solid ${(props) => props.theme['base-label']};
     cursor: pointer;
+  }
+
+  @media ${device.mobile} {
+    padding: 1rem;
   }
 `
 
