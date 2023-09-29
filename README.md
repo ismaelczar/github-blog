@@ -2,7 +2,7 @@
 
 *![Cover](.github/cover.png)*
 
-# Rocketseat Ignite React Desafio GitHub Blog
+# Rocketseat Ignite - Desafio React: GitHub Blog
 
 Blog utilizando das issues do repositório e da api do GitHub para simular posts
 
