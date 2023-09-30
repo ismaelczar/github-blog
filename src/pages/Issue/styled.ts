@@ -104,6 +104,19 @@ export const IssueBody = styled.div`
   letter-spacing: 0;
   text-align: justify;
 
+  h1,
+  h2,
+  h3 {
+    padding: 1rem 0;
+  }
+
+  pre {
+    background: ${(props) => props.theme['base-post']};
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+  }
+
   @media ${device.mobile} {
     padding: 1rem;
   }

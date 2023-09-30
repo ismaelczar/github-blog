@@ -17,7 +17,7 @@ export const GridPosts = styled.section`
 `
 
 export const PostsCard = styled(NavLink)`
-  padding: 1rem;
+  padding: 0.5rem;
   line-height: 160%;
   text-decoration: none;
   cursor: pointer;
@@ -28,11 +28,12 @@ export const PostsCard = styled(NavLink)`
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 1.25;
+  gap: 1rem;
 
   max-height: 250px;
-  overflow: hidden;
   border: 1px solid transparent;
+
+  white-space: pre-wrap;
 
   time {
     font-size: 0.875rem;
@@ -45,7 +46,15 @@ export const PostsCard = styled(NavLink)`
 
   @media ${device.mobile} {
     padding: 1rem;
+    time {
+      font-size: 0.75rem;
+    }
   }
+`
+
+export const Separator = styled.div`
+  margin: 0.5rem;
+  overflow: hidden;
 `
 
 export const PostsCardHeader = styled.div`
@@ -58,5 +67,19 @@ export const PostsCardHeader = styled.div`
     font-size: 1.25rem;
     width: 300px;
     line-height: 160%;
+  }
+
+  @media ${device.mobile} {
+    strong {
+      width: 230px;
+    }
+  }
+`
+
+export const PostContent = styled.div`
+  h1,
+  h2,
+  h3 {
+    color: ${(props) => props.theme.blue};
   }
 `

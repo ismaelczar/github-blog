@@ -12,6 +12,7 @@ import { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import Markdown from 'react-markdown'
 
 export function Issue() {
   const { issues } = useContext(IssuesContext)
@@ -24,7 +25,7 @@ export function Issue() {
   }
 
   const idNumber = parseInt(id, 10)
-  const index = issues[idNumber]
+  const issue = issues[idNumber]
 
   function distanceToNow(argument: string) {
     return formatDistanceToNow(new Date(argument), {
@@ -42,23 +43,25 @@ export function Issue() {
             <button onClick={() => navigate('/')}>VOLTAR</button>
             <a href="">VER NO GITHUB</a>
           </IssueLink>
-          <strong>{index.title}</strong>
+          <strong>{issue.title}</strong>
           <Tags>
             <span>
               <GithubLogo size={18} weight="bold" />
-              <p>{index.user.login}</p>
+              <p>{issue.user.login}</p>
             </span>
             <span>
               <MapPin size={18} weight="bold" />
-              <p>{distanceToNow(index.created_at)}</p>
+              <p>{distanceToNow(issue.created_at)}</p>
             </span>
             <span>
               <Users size={18} weight="bold" />
-              <p>{index.comments} comentários</p>
+              <p>{issue.comments} comentários</p>
             </span>
           </Tags>
         </IssueHeader>
-        <IssueBody>{index.body}</IssueBody>
+        <IssueBody>
+          <Markdown>{issue.body}</Markdown>
+        </IssueBody>
       </IssueComponent>
     </>
   )
