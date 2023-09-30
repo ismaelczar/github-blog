@@ -30,6 +30,9 @@ A aplicação utiliza conceitos como:
 1 - Instale as dependências:
 
 2 - Execute a aplicação web no modo de desenvolvimento:
+```
+  npm run dev / yarn dev
+```
 
 
 
