@@ -1,5 +1,4 @@
 import { styled } from 'styled-components'
-import { device } from '../../styles/mediaQuerys'
 
 export const SearchFormContainer = styled.form`
   display: flex;
