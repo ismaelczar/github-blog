@@ -48,3 +48,6 @@ A aplicação utiliza conceitos como:
 ## 🤵 Autor
 
 - [LinkedIn](https://www.linkedin.com/in/ismaelcezar/)
+
+
+repositório: https://github-blog-kappa-wine.vercel.app/
