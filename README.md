@@ -42,8 +42,6 @@ A aplicação utiliza conceitos como:
 - [React JS](https://pt-br.reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Styled-components](https://styled-components.com/)
-- [Vitest](https://vitest.dev/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## 🤵 Autor
 
